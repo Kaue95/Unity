@@ -615,7 +615,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7738200134908362925}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Escolhas, Assembly-CSharp
         m_MethodName: Escolha
         m_Mode: 1
@@ -748,7 +748,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7738200134908362925}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Escolhas, Assembly-CSharp
         m_MethodName: Escolha
         m_Mode: 1
@@ -1002,7 +1002,6 @@ GameObject:
   - component: {fileID: 7738200134908362923}
   - component: {fileID: 7738200134908362922}
   - component: {fileID: 7738200134908362925}
-  - component: {fileID: 7738200134908362924}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -1192,7 +1191,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7738200134908362924
+--- !u!114 &7738200134908362925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1204,41 +1203,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442ea2aecbaa14f4795f391e6c09512d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
+  Vetor1:
   - ID: 0
-    clip: {fileID: 8300000, guid: 4acc862792bde904aae7a24dfea330cf, type: 3}
+    clip: {fileID: 8300000, guid: 6cfc525cc03737349b7155562c09f7f5, type: 3}
     volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}
   - ID: 1
-    clip: {fileID: 8300000, guid: 8c56eb604c8547b47a0246d19e4c7a2f, type: 3}
+    clip: {fileID: 8300000, guid: 6cfc525cc03737349b7155562c09f7f5, type: 3}
     volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}
---- !u!114 &7738200134908362925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7738200134908362921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c80e0ac49c5f8f44499316b48260a514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
+  Vetor2:
   - ID: 0
-    clip: {fileID: 8300000, guid: 258be6f95fcf1fe4690e86b48679d2f3, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: d80eb6409d1a9a648a5625db0e8f280e, type: 3}
+    volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}
   - ID: 1
-    clip: {fileID: 8300000, guid: de54551f17b883944a23226374679e51, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: f1e0733b76b7a764d8708b3c44260d99, type: 3}
+    volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}
