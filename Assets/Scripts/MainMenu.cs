@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,4 +20,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
+    internal static void SetActive(bool v)
+    {
+        throw new NotImplementedException();
+    }
 }
