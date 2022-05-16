@@ -10,6 +10,7 @@ public class MenuButton : MonoBehaviour
     public GameObject Main;
     public GameObject Options;
     public GameObject Slots;
+  
 
     private void Update()
     {
@@ -18,10 +19,10 @@ public class MenuButton : MonoBehaviour
             Main.SetActive(false);
             Options.SetActive(true);
             Slots.SetActive(false);
+           
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-
             Main.SetActive(true);
             Options.SetActive(false);
             Slots.SetActive(false);
@@ -31,8 +32,14 @@ public class MenuButton : MonoBehaviour
             Slots.SetActive(true);
             Options.SetActive(false);
             Main.SetActive(false);
+           
+        }else if(Slots == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene(1);
+            }
         }
-
 
     }
 
