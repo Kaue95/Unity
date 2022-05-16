@@ -1216,6 +1216,18 @@ MonoBehaviour:
     pitch: 0
     loop: 0
     source: {fileID: 0}
+  - ID: 2
+    clip: {fileID: 8300000, guid: 6cfc525cc03737349b7155562c09f7f5, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - ID: 3
+    clip: {fileID: 8300000, guid: fa5c56ad722c0f643a57d8bfb238a7cf, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
   Vetor2:
   - ID: 0
     clip: {fileID: 8300000, guid: d80eb6409d1a9a648a5625db0e8f280e, type: 3}

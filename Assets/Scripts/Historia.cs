@@ -7,9 +7,9 @@ public class Historia : MonoBehaviour
 
     public Sound[] Vetor1;
     public Sound[] Vetor2;
-    private AudioSource source;
+    private AudioSource source, source2;
     private int historia = 0, direita = 0, esquerda = 1;
-    private bool verificacao = false;
+    private bool verificacao = false, verificacao2 = false;
 
     public static Historia instance;
     void Awake()
@@ -46,6 +46,7 @@ public class Historia : MonoBehaviour
     }
 
 
+    // Funções que buscam os aúdios no vetores por ID
     public void Narracao(int id)
     {
         Sound som = Array.Find(Vetor1, sound => sound.ID == id);
@@ -58,6 +59,7 @@ public class Historia : MonoBehaviour
         if (!verificacao)
         {
             som.source.Play();
+            source2 = som.source;
         }
         if (som.source.isPlaying)
         {
@@ -74,8 +76,15 @@ public class Historia : MonoBehaviour
             Debug.LogWarning("O som: " + id + " não foi encontrado!");
             return;
         }
-        som2.source.Play();
-        source = som2.source;
+        if (!verificacao2)
+        {
+            som2.source.Play();
+            source = som2.source;
+        }
+        if(som2.source.isPlaying)
+        {
+            verificacao2 = true;
+        }
     }
 
     void Update()
@@ -83,11 +92,12 @@ public class Historia : MonoBehaviour
         StartCoroutine(escolha());
     }
 
+    // Rotina que capta o input das setas esquerda e direita
     IEnumerator escolha()
     {
-        enabled = true;
-        if (!Vetor1[historia].source.isPlaying)
+        if (!source2.isPlaying)
         {
+            Debug.Log("Condição preenchida!");
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 Debug.Log("Esquerda");
@@ -97,9 +107,7 @@ public class Historia : MonoBehaviour
                     yield return null;
                 }
                 verificacao = false;
-                StartCoroutine(rotina());
-                yield return enabled = false;
-
+                Story();
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -110,40 +118,66 @@ public class Historia : MonoBehaviour
                     yield return null;
                 }
                 verificacao = false;
-                StartCoroutine(rotina());
-                yield return enabled = false;
+                Story();
             }
-
         }
-        IEnumerator rotina()
+
+        // Flag para saber se a condição está funcionando
+        /*
+        else
         {
-            if (historia == 1)
+            yield return null;
+            Debug.Log("Nulo");
+        }
+        */
+        
+    }
+       
+        // Aúdios da história
+        public void Story()
+        {
+            Debug.Log("Valor historia: " + historia);
+            if (!source2.isPlaying)
             {
-                Narracao(historia);
-                yield return null;
+                if (historia == 1)
+                {
+                    Narracao(historia);
+                    historia++;
+                    verificacao2 = false;
+                }
+                else if (historia == 2)
+                {
+                    Narracao(historia);
+                    historia++;
+                    verificacao2 = false;
+
+                }
+                else if (historia == 3)
+                {
+                    Narracao(historia);
+                    historia++;
+                    verificacao2 = false;
+                }
             }
         }
 
-        void Direita()
+        // Escolhas da Direita
+        public void Direita()
         {
             if (direita == 0)
             {
                 Escolha(direita);
-                direita = +2;
-                esquerda = +2;
                 Debug.Log("Valor da esquerda: " + direita);
             }
         }
 
-        void Esquerda()
+        // Escolhas da Esquerda
+        public void Esquerda()
         {
             if (esquerda == 1)
             {
                 Escolha(esquerda);
-                esquerda = +2;
-                direita = +2;
                 Debug.Log("Valor da esquerda: " + esquerda);
             }
         }
-    }
 }
